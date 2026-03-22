@@ -7,16 +7,7 @@ function joinUrl(base: string, path: string) {
 
 export default function Navbar() {
   const baseUrl = process.env.WEB_HOME || "";
-
-  const utmParams = new URLSearchParams({
-    utm_source: "pghome_official",
-    utm_medium: "website",
-    utm_campaign: "navbar_banner",
-  }).toString();
-
-  const destinationUrl = baseUrl
-    ? `${baseUrl}${baseUrl.includes("?") ? "&" : "?"}${utmParams}`
-    : "";
+  const destinationUrl = baseUrl;
 
   const images = Array.from({ length: 6 }, (_, i) => {
     const n = i + 1;
