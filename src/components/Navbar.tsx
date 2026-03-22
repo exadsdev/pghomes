@@ -14,7 +14,9 @@ export default function Navbar() {
     utm_campaign: "navbar_banner",
   }).toString();
 
-  const destinationUrl = baseUrl ? `${baseUrl}${baseUrl.includes("?") ? "&" : "?"}${utmParams}` : "";
+  const destinationUrl = baseUrl
+    ? `${baseUrl}${baseUrl.includes("?") ? "&" : "?"}${utmParams}`
+    : "";
 
   const images = Array.from({ length: 6 }, (_, i) => {
     const n = i + 1;
@@ -34,12 +36,18 @@ export default function Navbar() {
             key={index}
             className="m-0 p-0 flex-shrink-0 w-full sm:w-1/3 md:w-[200px]"
           >
-            <a href={destinationUrl} target="_blank" rel="noopener">
+            <a
+              href={destinationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              referrerPolicy="no-referrer"
+            >
               <img
                 src={img.src}
                 alt={img.alt}
                 className="block w-full h-auto object-cover cursor-pointer"
                 loading="lazy"
+                referrerPolicy="no-referrer"
               />
             </a>
           </div>
